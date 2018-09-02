@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>
+            {% block title %}
+                SalesVest
+            {% endblock title %}
+        </title>
+        {% block header %}{% endblock header %}
+    </head>
+    <body>
+        Welcome to SalesVest
+        {% block content %}{% endblock content %}
+        {% block footer %}{% endblock footer %}
+    </body>
+</html>
+{% if user.is_authenticated %}
+<li>
+    <a href="{% url 'auth_logout' %}">Logout</a>
+</li>
+{% else %}
+<li>
+    <a href="{% url 'auth_login' %}">Login</a>
+</li>
+<li>
+    <a href="{% url 'registration_register' %}">Register</a>
+</li>
+{% endif %}

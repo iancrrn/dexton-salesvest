@@ -1,0 +1,5 @@
+{% extends 'appa/base.html' %}
+
+{% block content %}
+Hi {{user}}, <a href="{% url 'auth_logout' %}">Log out</a>
+{% endblock %}
